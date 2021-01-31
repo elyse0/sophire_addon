@@ -1,0 +1,2 @@
+**Suffire addon for Firefox**
+
