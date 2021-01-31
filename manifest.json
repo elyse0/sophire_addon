@@ -1,12 +1,18 @@
 {
   "manifest_version": 2,
-  "name": "Suffire Addon | Learn french verbs and vocabulary",
+  "name": "Suffire | Learn french verbs and vocabulary",
   "version": "1.0.1",
-
-  "description": "Suffire is a project that tries to make simpler learning new french words!",
-
+  "description": "Making easier to learn new french words!",
   "background": {
     "scripts": ["suffire_addon.js"]
+  },
+  "browser_action": {
+  "default_icon": "button/suffire-icon.png",
+  "default_title": "Suffire | French learning",
+  "default_popup": "settings/options.html"
+},
+  "options_ui": {
+    "page": "settings/options.html"
   },
   "permissions": [
     "storage",

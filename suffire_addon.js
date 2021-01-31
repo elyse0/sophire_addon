@@ -62,20 +62,60 @@ function suffire_tabs(tabs) {
     // True -> Verbs
     // False -> Vocabulary
 
-    if (get_switch())
-        update_or_create_verbs_tab(tabs)
-    else
-        update_or_create_vocabulary_tab(tabs)
+    browser.storage.local.get({
+            period: 1,
+            verbs: true,
+            vocabulary: true
+        }, (data, err) => {
+
+        console.log("Verbs: " + data.verbs)
+        console.log("Vocabulary: " + data.vocabulary)
+        console.log("Period: " + data.period)
+
+        if(!err){
+
+                if(data.verbs && data.vocabulary){
+
+                    if (get_switch())
+                        update_or_create_verbs_tab(tabs)
+                    else
+                        update_or_create_vocabulary_tab(tabs)
+                }else if(data.verbs){
+
+                    update_or_create_verbs_tab(tabs)
+
+                }else if(data.vocabulary){
+                    update_or_create_vocabulary_tab(tabs)
+                }
+            }
+        }
+    )
 }
-
-let periodInMinutes = 0.1;
-
-browser.alarms.create({
-    periodInMinutes
-})
 
 function handle_alarm(alarmInfo) {
     browser.tabs.query({currentWindow: true}, suffire_tabs)
 }
 
-browser.alarms.onAlarm.addListener(handle_alarm);
+function create_alarm(period){
+
+    browser.alarms.create("suffire", {
+        periodInMinutes: period
+    })
+
+    browser.alarms.onAlarm.addListener(handle_alarm);
+}
+
+// Create alarm with values stored (default values are used if they don't exist)
+browser.storage.local.get({
+        period: 1,
+        verbs: true,
+        vocabulary: true
+    }, (data, err) => {
+
+        if(!err){
+
+            create_alarm(data.period)
+        }
+    }
+)
+
