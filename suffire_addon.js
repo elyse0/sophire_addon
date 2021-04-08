@@ -24,7 +24,12 @@ function find_tab_id_by_url(tabs, url){
 
 function reload_and_active_tab_by_id(tab_id){
 
-    browser.tabs.reload(tab_id)
+    browser.tabs.executeScript(tab_id, {file: "scripts/reload_page.js"}, (data, err) => {
+
+        if(err){
+            console.log("Error executing script !")
+        }
+    })
     browser.tabs.update(tab_id, {active: true})
 }
 
