@@ -1,14 +1,14 @@
 {
   "manifest_version": 2,
-  "name": "Suffire | Learn french verbs and vocabulary",
-  "version": "1.0.2",
+  "name": "Sophire | Learn french verbs and vocabulary",
+  "version": "1.0.4",
   "description": "Making easier to learn new french words!",
   "background": {
-    "scripts": ["suffire_addon.js"]
+    "scripts": ["sophire_addon.js"]
   },
   "browser_action": {
-  "default_icon": "button/suffire-icon.png",
-  "default_title": "Suffire | French learning",
+  "default_icon": "button/sophire_icon.png",
+  "default_title": "Sophire | French learning",
   "default_popup": "settings/options.html"
 },
   "options_ui": {
@@ -20,10 +20,10 @@
     "tabs",
     "webNavigation",
     "cookies",
-    "https://french-verbs.herokuapp.com/*"
+    "https://sophire.herokuapp.com/*"
   ],
   "icons": {
-    "48": "button/suffire-icon.48.png",
-    "96": "button/suffire-icon.96.png"
+    "48": "button/sophire_icon.48.png",
+    "96": "button/sophire_icon.96.png"
   }
 }

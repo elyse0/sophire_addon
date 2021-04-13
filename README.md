@@ -1,2 +1,2 @@
-**Suffire addon for Firefox**
+**sophire addon for Firefox**
 

@@ -62,7 +62,7 @@ function update_or_create_vocabulary_tab(tabs){
         create_and_active_tab(vocabulary_url, 2)
 }
 
-function suffire_tabs(tabs) {
+function sophire_tabs(tabs) {
 
     // True -> Verbs
     // False -> Vocabulary
@@ -98,12 +98,12 @@ function suffire_tabs(tabs) {
 }
 
 function handle_alarm(alarmInfo) {
-    browser.tabs.query({currentWindow: true}, suffire_tabs)
+    browser.tabs.query({currentWindow: true}, sophire_tabs)
 }
 
 function create_alarm(period){
 
-    browser.alarms.create("suffire", {
+    browser.alarms.create("sophire", {
         periodInMinutes: period
     })
 

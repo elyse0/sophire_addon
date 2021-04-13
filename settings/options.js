@@ -33,8 +33,8 @@ function save_options(e) {
 function reset_alarm(period){
 
     // Reset alarm to new value
-    browser.alarms.clear("suffire")
-    browser.alarms.create("suffire", {periodInMinutes: period})
+    browser.alarms.clear("sophire")
+    browser.alarms.create("sophire", {periodInMinutes: period})
 }
 
 function restore_options() {
