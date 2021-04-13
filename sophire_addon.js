@@ -1,6 +1,6 @@
 let switch_value = false
-let verbs_url = "https://french-verbs.herokuapp.com/verbs/random"
-let vocabulary_url = "https://french-verbs.herokuapp.com/vocabulary/random"
+let verbs_url = "https://sophire.herokuapp.com/verbes/aleatoire"
+let vocabulary_url = "https://sophire.herokuapp.com/vocabulaire/aleatoire"
 
 function get_switch(){
 
